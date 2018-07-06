@@ -6,6 +6,11 @@
  * Time: 19:16
  */
 
+namespace Model;
+
+use Core\Model;
+
+
 class User extends Model
 {
     public $tableName = 'users';
@@ -16,7 +21,7 @@ class User extends Model
         $prep = $this->db->prepare($sql);
         $prep->execute();
 
-        return $prep->fetchAll(PDO::FETCH_OBJ);
+        return $prep->fetchAll(\PDO::FETCH_OBJ);
 
     }
 

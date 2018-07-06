@@ -8,6 +8,12 @@
         }
     ],
     "autoload": {
+        "psr-4": {
+            "Controller\\": "controller/",
+            "Core\\": "core/",
+            "Model\\": "model/",
+            "Config\\": "config/"
+        },
         "classmap": [
             "controller/",
             "config",

@@ -6,6 +6,8 @@
  * Time: 13:09
  */
 
+namespace Core;
+
 require DIR_WEB . DS . 'config' . DS . 'Config.php';
 
 require 'Request.php';

@@ -6,6 +6,10 @@
  * Time: 15:15
  */
 
+namespace Model;
+
+use Core\Model;
+
 class Message extends Model
 {
     public $tableName = 'messages';

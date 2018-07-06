@@ -6,6 +6,11 @@
  * Time: 19:56
  */
 
+namespace Controller;
+
+use Core\Controller;
+use Core\Dispatcher;
+
 class UserController extends Controller
 {
 

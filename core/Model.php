@@ -6,6 +6,10 @@
  * Time: 15:14
  */
 
+namespace Core;
+
+use Config\Config;
+
 class Model
 {
 
@@ -21,10 +25,10 @@ class Model
             return true;
         }
         try{
-            $pdo = new PDO('mysql:host='.$config['host'].';dbname='.$config['dbname'].'', $config['username'], $config['password']);
+            $pdo = new \PDO('mysql:host='.$config['host'].';dbname='.$config['dbname'].'', $config['username'], $config['password']);
             Model::$connections['database'] = $pdo;
             $this->db = $pdo;
-        } catch (PDOException $e) {
+        } catch (\PDOException $e) {
             die($e->getMessage());
         }
 
@@ -35,7 +39,7 @@ class Model
         $prep = $this->db->prepare($sql);
         $prep->execute();
 
-        return $prep->fetchAll(PDO::FETCH_OBJ);
+        return $prep->fetchAll(\PDO::FETCH_OBJ);
 
     }
 }

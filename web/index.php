@@ -17,4 +17,4 @@ require DIR_WEB.DS.'/vendor/autoload.php';
 
 //require CORE.DS.'Includes.php';
 
-new Dispatcher();
+new \Core\Dispatcher();

@@ -6,6 +6,8 @@
  * Time: 13:14
  */
 
+namespace Core;
+
 class Request
 {
     public $url; // URL called by the user

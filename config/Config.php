@@ -6,6 +6,8 @@
  * Time: 15:27
  */
 
+namespace Config;
+
 class Config {
 
     static $config = [

@@ -6,6 +6,13 @@
  * Time: 13:47
  */
 
+namespace Core;
+
+use Config\Config;
+use Model\User;
+use Model\Message;
+
+
 class Controller
 {
     public $request;
@@ -49,7 +56,8 @@ class Controller
         $file = DIR_WEB.DS.'model'.DS.$modalName.'.php';
         require_once ($file);
         if (!isset($this->$modalName)) {
-            $this->$modalName = new $modalName();
+            $realName = "\Model\\".$modalName;
+            $this->$modalName = new $realName();
         }
     }
 
@@ -59,6 +67,7 @@ class Controller
     public function controllerFromView($controller, $action){
         $controller .= 'Controller';
         require_once DIR_WEB.DS.'controller'.DS.$controller.'.php';
+        $controller = "\Controller\\".$controller;
         $initController = new $controller();
         return $initController->$action();
 

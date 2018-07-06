@@ -6,6 +6,12 @@
  * Time: 13:07
  */
 
+namespace Core;
+
+use Controller\UserController;
+use Controller\MessageController;
+
+
 class Dispatcher
 {
 
@@ -25,7 +31,10 @@ class Dispatcher
         $name = ucfirst($this->request->controller).'Controller';
         $file = DIR_WEB.DS.'controller'.DS.$name.'.php';
         require  $file;
-        $controller = new $name($this->request);
+        //var_dump($file);
+        //var_dump("\Controller\\".$name);die;
+        $contrName = "\Controller\\".$name;
+        $controller = new $contrName($this->request);
 
         return $controller;
     }
