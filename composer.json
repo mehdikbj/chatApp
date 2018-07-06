@@ -1,0 +1,20 @@
+{
+    "name": "i.t/chat-app",
+    "description": "chat application",
+    "authors": [
+        {
+            "name": "mehdikbj",
+            "email": "mehdikabb@gmail.com"
+        }
+    ],
+    "autoload": {
+        "classmap": [
+            "controller/",
+            "config",
+            "core",
+            "model",
+            "view"
+        ]
+    },
+    "require": {}
+}

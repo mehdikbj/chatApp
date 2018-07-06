@@ -12,6 +12,9 @@ define('DS', DIRECTORY_SEPARATOR);
 define('CORE', DIR_WEB.DS.'core');
 define('BASE_URL', dirname(dirname($_SERVER['SCRIPT_NAME'])));
 
-require CORE.DS.'Includes.php';
+require DIR_WEB.DS.'/vendor/autoload.php';
+
+
+//require CORE.DS.'Includes.php';
 
 new Dispatcher();
