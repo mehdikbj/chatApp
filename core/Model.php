@@ -34,7 +34,8 @@ class Model
 
     }
 
-    public function findAll() {
+    public function findAll()
+    {
         $sql = 'SELECT * FROM '. $this->tableName;
         $prep = $this->db->prepare($sql);
         $prep->execute();

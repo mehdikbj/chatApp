@@ -15,7 +15,8 @@ class User extends Model
 {
     public $tableName = 'users';
 
-    public function findUserByUserNameAndPassword($username, $password){
+    public function findUserByUserNameAndPassword($username, $password)
+    {
         $sql = "SELECT * FROM ". $this->tableName ." WHERE username ='".$username. "' AND password ='".$password."'";
 
         $prep = $this->db->prepare($sql);
@@ -25,7 +26,8 @@ class User extends Model
 
     }
 
-    public function createUser($username, $password) {
+    public function createUser($username, $password)
+    {
         $connected = 1;
         $sql = "INSERT INTO ".$this->tableName. "(`username`, `password`, `connected`) VALUES ('".$username."', '".$password."','".$connected."') ";
 

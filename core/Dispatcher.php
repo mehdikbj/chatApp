@@ -15,9 +15,9 @@ use Controller\MessageController;
 class Dispatcher
 {
 
-    var $request;
+    public $request;
 
-    function __construct()
+    public function __construct()
     {
         $this->request = new Request();
         Router::parse($this->request->url, $this->request);
@@ -27,7 +27,8 @@ class Dispatcher
         $controller->render($this->request->action);
     }
 
-    function loadController(){
+    public function loadController()
+    {
         $name = ucfirst($this->request->controller).'Controller';
         $file = DIR_WEB.DS.'controller'.DS.$name.'.php';
         require  $file;

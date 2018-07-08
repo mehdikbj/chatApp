@@ -8,9 +8,11 @@
 
 namespace Config;
 
-class Config {
+class Config
+{
 
-    static $config = [
+    public static $config =
+        [
         'database' => [
             'host'      => 'localhost',
             'dbname'    => 'newchat',

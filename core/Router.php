@@ -16,7 +16,8 @@ class Router
      * @param $url
      * @return Array of parameters
      */
-    static function parse($url, $request) {
+    public static function parse($url, $request)
+    {
         $url = trim($url, '/');
         $params = explode('/', $url);
         $request->controller = $params[0];

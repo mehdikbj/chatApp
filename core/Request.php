@@ -12,7 +12,7 @@ class Request
 {
     public $url; // URL called by the user
 
-    function __construct()
+    public function __construct()
     {
         $this->url = isset($_SERVER['PATH_INFO']) ? $_SERVER['PATH_INFO'] : '';
     }

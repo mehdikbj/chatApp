@@ -14,7 +14,8 @@ class Message extends Model
 {
     public $tableName = 'messages';
 
-    public function createMessage($username, $message){
+    public function createMessage($username, $message)
+    {
         $createdAt = date('Y-m-d H:i:s');
         $sql = "INSERT INTO ".$this->tableName. "(`user`, `message`, `createdAt`) VALUES ('".$username."', '".$message."','".$createdAt."') " ;
 

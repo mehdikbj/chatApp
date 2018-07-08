@@ -14,7 +14,8 @@ use Core\Dispatcher;
 class UserController extends Controller
 {
 
-    public function login(){
+    public function login()
+    {
 
         if (isset($_POST["password"]) &&  isset($_POST["username"])) {
             $username = $_POST["username"];
@@ -29,7 +30,8 @@ class UserController extends Controller
 
             }
 
-            if ($this->isUserLogged()){
+            if ($this->isUserLogged())
+            {
                 $this->redirectToPage('message/index');
 
             }
@@ -40,7 +42,8 @@ class UserController extends Controller
         $this->set('users', $users);
     }
 
-    public function logout(){
+    public function logout()
+    {
         if (isset($_POST['logout']))
         {
             unset($_SESSION['user']);
@@ -51,7 +54,8 @@ class UserController extends Controller
 
     }
 
-    public function register(){
+    public function register()
+    {
 
         if (isset($_POST["password"]) &&  isset($_POST["username"]) && $_POST["username"] != "" &&  $_POST["password"] != "") {
             $username = $_POST["username"];
@@ -71,7 +75,8 @@ class UserController extends Controller
 
     }
 
-    public function isUserLogged(){
+    public function isUserLogged()
+    {
         return isset($_SESSION['user']->id);
     }
 

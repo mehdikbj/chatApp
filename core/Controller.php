@@ -33,8 +33,12 @@ class Controller
 
     }
 
-    public function render($view) {
-        if ($this->rendred){ return false; }
+    public function render($view)
+    {
+        if($this->rendred)
+        {
+            return false;
+        }
         extract($this->vars);
         $view = DIR_WEB.DS.'view'.DS.$this->request->controller.DS.$view.'.php';
         ob_start();
@@ -44,15 +48,18 @@ class Controller
         $this->rendred = true;
     }
 
-    public function set($key, $value = null) {
-        if(is_array($key)){
+    public function set($key, $value = null)
+    {
+        if(is_array($key))
+        {
             $this->vars += $key;
         } else {
             $this->vars[$key] = $value;
         }
     }
 
-    public function loadModal($modalName) {
+    public function loadModal($modalName)
+    {
         $file = DIR_WEB.DS.'model'.DS.$modalName.'.php';
         require_once ($file);
         if (!isset($this->$modalName)) {
@@ -64,7 +71,8 @@ class Controller
     /**
      * allow to call controller from view
      */
-    public function controllerFromView($controller, $action){
+    public function controllerFromView($controller, $action)
+    {
         $controller .= 'Controller';
         require_once DIR_WEB.DS.'controller'.DS.$controller.'.php';
         $controller = "\Controller\\".$controller;
@@ -80,8 +88,10 @@ class Controller
 
     }
 
-    public function setSession($user){
-        if ($user){
+    public function setSession($user)
+    {
+        if ($user)
+        {
             $_SESSION['user'] = $user;
             $this->isConnected = true;
         }

@@ -10,10 +10,10 @@ namespace Controller;
 
 use Core\Controller;
 
-
 class MessageController extends Controller
 {
-    public function index() {
+    public function index()
+    {
 
         if(!isset($_SESSION['user']))
         {
